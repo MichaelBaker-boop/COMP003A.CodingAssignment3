@@ -36,15 +36,54 @@ namespace COMP003A.CodingAssignment3
                     Console.WriteLine($"Invalid input: {ex.Message}\n Please try again.");
                 }
             }
-            Console.WriteLine("1. Add an Expense.\n");
-            Console.WriteLine("2. View Expenses and Budget.\n");
-            Console.WriteLine("3. Remove an Expense.\n");
-            Console.WriteLine("4. Exit");
+
+            // Create menu and ask for user input
 
             int menuChoice;
-            Console.Write("Enter your choice");
-            menuChoice = int.Parse(Console.ReadLine());
-            
+            while (true)
+            {
+                Console.WriteLine("1. Add an Expense.\n");
+                Console.WriteLine("2. View Expenses and Budget.\n");
+                Console.WriteLine("3. Remove an Expense.\n");
+                Console.WriteLine("4. Exit");
+
+                Console.Write("Enter your choice number: ");
+                menuChoice = int.Parse(Console.ReadLine());
+
+                try
+                {
+                    if (menuChoice <= 0) throw new Exception("Number must be 1 through 4.");
+                    if (menuChoice > 4) throw new Exception("Number must be 1 through 4.");
+                    break;
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Invalid input: {ex.Message}\n Please try again.");
+                }
+            }
+            string expense1;
+            string expense2;
+            string expense3;
+            string expense4;
+            string expense5;
+            int expense1Value;
+            int expense2Value;
+            int expense3Value;
+            int expense4Value;
+            int expense5Value;
+
+
+            // First menu popup
+            if (menuChoice == 1);
+            {
+                Console.Write("Name of the Expense: ");
+                expense1 = Console.ReadLine();
+                Console.Write("Enter the expense amount: ");
+                expense1Value = int.Parse(Console.ReadLine());
+                Console.WriteLine("Expense added successfully!");
+
+            }
         }
     }
 }
