@@ -4,6 +4,7 @@
 //Purpose: Budget management application demonstrating control flow
 
 
+using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 
 namespace COMP003A.CodingAssignment3
@@ -37,53 +38,40 @@ namespace COMP003A.CodingAssignment3
                 }
             }
 
-            // Create menu and ask for user input
-
-            int menuChoice;
-            while (true)
+            bool menu = true;
+            while (menu)
             {
-                Console.WriteLine("1. Add an Expense.\n");
-                Console.WriteLine("2. View Expenses and Budget.\n");
-                Console.WriteLine("3. Remove an Expense.\n");
-                Console.WriteLine("4. Exit");
+                // Create a menu and ask for choice from user
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1) Add an expense.");
+                Console.WriteLine("2) View expenses and budget.");
+                Console.WriteLine("3) Remove an expense.");
+                Console.WriteLine("4) Exit.");
 
-                Console.Write("Enter your choice number: ");
-                menuChoice = int.Parse(Console.ReadLine());
-
-                try
+                int choice = int.Parse(Console.ReadLine());
+                switch (choice)
                 {
-                    if (menuChoice <= 0) throw new Exception("Number must be 1 through 4.");
-                    if (menuChoice > 4) throw new Exception("Number must be 1 through 4.");
-                    break;
+                    case 1:
+                        Console.WriteLine("You chose 1.");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("You chose 2.");
+                        break;
+                    case 3:
+                        Console.WriteLine("You chose 3.");
+                        break;
+                    case 4:
+                        Console.WriteLine("Goodbye!");
+                        menu = false;
+                        break;
+                    default:
+                        throw new Exception("Choice must be a number between 1 and 4.");
                 }
-
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Invalid input: {ex.Message}\n Please try again.");
-                }
-            }
-            string expense1;
-            string expense2;
-            string expense3;
-            string expense4;
-            string expense5;
-            int expense1Value;
-            int expense2Value;
-            int expense3Value;
-            int expense4Value;
-            int expense5Value;
-
-
-            // First menu popup
-            if (menuChoice == 1);
-            {
-                Console.Write("Name of the Expense: ");
-                expense1 = Console.ReadLine();
-                Console.Write("Enter the expense amount: ");
-                expense1Value = int.Parse(Console.ReadLine());
-                Console.WriteLine("Expense added successfully!");
 
             }
         }
     }
 }
+
+           
