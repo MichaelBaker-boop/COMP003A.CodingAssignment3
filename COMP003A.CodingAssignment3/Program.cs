@@ -5,6 +5,7 @@
 
 
 using System.ComponentModel.Design;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 
 namespace COMP003A.CodingAssignment3
@@ -37,6 +38,16 @@ namespace COMP003A.CodingAssignment3
                     Console.WriteLine($"Invalid input: {ex.Message}\n Please try again.");
                 }
             }
+            string expense1 = "N/A";
+            string expense2;
+            string expense3;
+            string expense4;
+            string expense5;
+            int expenseValue1 = 0;
+            int expenseValue2;
+            int expenseValue3;
+            int expenseValue4;
+            int expenseValue5;
 
             bool menu = true;
             while (menu)
@@ -49,14 +60,18 @@ namespace COMP003A.CodingAssignment3
                 Console.WriteLine("4) Exit.");
 
                 int choice = int.Parse(Console.ReadLine());
+               
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("You chose 1.");
+                        Console.Write("Enter the name of an expense: ");
+                        expense1 = Console.ReadLine();
+                        Console.Write("Enter the value of the expense: ");
+                        expenseValue1 = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Expense Added Successfully");
                         break;
-
                     case 2:
-                        Console.WriteLine("You chose 2.");
+                        Console.WriteLine($"Expenses:\n{expense1} = {expenseValue1}");
                         break;
                     case 3:
                         Console.WriteLine("You chose 3.");
@@ -66,7 +81,10 @@ namespace COMP003A.CodingAssignment3
                         menu = false;
                         break;
                     default:
-                        throw new Exception("Choice must be a number between 1 and 4.");
+                        Console.WriteLine("Choice must be between 1 and 4.");
+                        break;
+                    
+         
                 }
 
             }
