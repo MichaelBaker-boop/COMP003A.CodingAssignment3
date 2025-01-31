@@ -38,16 +38,16 @@ namespace COMP003A.CodingAssignment3
                     Console.WriteLine($"Invalid input: {ex.Message}\n Please try again.");
                 }
             }
-            string expense1 = "N/A";
-            string expense2;
-            string expense3;
-            string expense4;
-            string expense5;
+            string expense1 = "Not Added";
+            string expense2 = "Not Added";
+            string expense3 = "Not Added";
+            string expense4 = "Not Added";
+            string expense5 = "Not Added";
             int expenseValue1 = 0;
-            int expenseValue2;
-            int expenseValue3;
-            int expenseValue4;
-            int expenseValue5;
+            int expenseValue2 = 0;
+            int expenseValue3 = 0;
+            int expenseValue4 = 0;
+            int expenseValue5 = 0;
 
             bool menu = true;
             while (menu)
@@ -61,20 +61,50 @@ namespace COMP003A.CodingAssignment3
 
                 int choice = int.Parse(Console.ReadLine());
                
-                switch (choice)
+                switch (choice) // Switch Block Based on user choice
                 {
-                    case 1:
+                    case 1: // Enter a new expense
+                        string answer;
+
                         Console.Write("Enter the name of an expense: ");
                         expense1 = Console.ReadLine();
+
                         Console.Write("Enter the value of the expense: ");
                         expenseValue1 = int.Parse(Console.ReadLine());
+
                         Console.WriteLine("Expense Added Successfully");
-                        break;
+
+                        Console.Write("Would you like to add another expense?"); // Check if user would like to add another expense
+                        answer = Console.ReadLine();
+                        if (answer == "Yes")
+                        {
+                            Console.Write("Enter the name of an expense: ");
+                            expense2 = Console.ReadLine();
+
+                            Console.Write("Enter the value of the expense: ");
+                            expenseValue2 = int.Parse(Console.ReadLine());
+
+                            Console.WriteLine("Expense Added Successfully");
+                           
+                        }
+                        else
+                        {
+                            break;
+                        }
+                            break;
                     case 2:
                         Console.WriteLine($"Expenses:\n{expense1} = {expenseValue1}");
+                        Console.WriteLine("\n{expense2} = {expenseValue2}");
                         break;
                     case 3:
-                        Console.WriteLine("You chose 3.");
+                        string removal;
+                        Console.Write("Which expense would you like to remove?");
+                        removal = Console.ReadLine();
+                        if (removal == expense1)
+                        {
+                            expense1 = "Not Added";
+                            Console.WriteLine("Expense Successfully Removed.");
+                        }
                         break;
                     case 4:
                         Console.WriteLine("Goodbye!");
