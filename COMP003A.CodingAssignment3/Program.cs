@@ -60,7 +60,7 @@ namespace COMP003A.CodingAssignment3
                 Console.WriteLine("4) Exit.");
 
                 int choice = int.Parse(Console.ReadLine());
-               
+
                 switch (choice) // Switch Block Based on user choice
                 {
                     case 1: // Enter a new expense
@@ -76,25 +76,47 @@ namespace COMP003A.CodingAssignment3
 
                         Console.Write("Would you like to add another expense?"); // Check if user would like to add another expense
                         answer = Console.ReadLine();
-                        if (answer == "Yes")
+                        try
                         {
-                            Console.Write("Enter the name of an expense: ");
-                            expense2 = Console.ReadLine();
 
-                            Console.Write("Enter the value of the expense: ");
-                            expenseValue2 = int.Parse(Console.ReadLine());
 
-                            Console.WriteLine("Expense Added Successfully");
-                           
+                            if (answer == "Yes")
+                            {
+                                Console.Write("Enter the name of an expense: ");
+                                expense2 = Console.ReadLine();
+
+                                Console.Write("Enter the value of the expense: ");
+                                expenseValue2 = int.Parse(Console.ReadLine());
+
+                                Console.WriteLine("Expense Added Successfully");
+
+                            }
+                            if (answer == "No")
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                throw new Exception("Answer must be Yes or No.");
+                            }
                         }
-                        else
+                        catch
                         {
-                            break;
+                            Console.WriteLine($"\n{expense2} = {expenseValue2}");
                         }
+                
                             break;
                     case 2:
                         Console.WriteLine($"Expenses:\n{expense1} = {expenseValue1}");
-                        Console.WriteLine("\n{expense2} = {expenseValue2}");
+                        Console.WriteLine($"{expense2} = {expenseValue2}");
+                        Console.WriteLine($"{expense3} = {expenseValue3}");
+                        Console.WriteLine($"{expense4} = {expenseValue4}");
+                        Console.WriteLine($"{expense5} = {expenseValue5}");
+                        int totalExpenses = expenseValue1 + expenseValue2 + expenseValue3 + expenseValue4 + expenseValue5; // Calculate Total Expenses
+                        int totalBudget = income - totalExpenses; // Calculate Remaining Budget
+
+                        Console.WriteLine($"Total Expenses: ${totalExpenses}\nRemaining Budget: ${totalBudget}.");
+
                         break;
                     case 3:
                         string removal;
@@ -103,6 +125,7 @@ namespace COMP003A.CodingAssignment3
                         if (removal == expense1)
                         {
                             expense1 = "Not Added";
+                            expenseValue1 = 0;
                             Console.WriteLine("Expense Successfully Removed.");
                         }
                         break;
