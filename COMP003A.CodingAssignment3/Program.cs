@@ -149,7 +149,7 @@ namespace COMP003A.CodingAssignment3
                         break;
                     case 3:
                         string removal;
-                        Console.Write("Which expense would you like to remove?");
+                        Console.Write("Which expense would you like to remove? ");
                         removal = Console.ReadLine();
                         if (removal == expense1)
                         {
@@ -157,6 +157,31 @@ namespace COMP003A.CodingAssignment3
                             expenseValue1 = 0;
                             Console.WriteLine("Expense Successfully Removed.");
                         }
+                        if (removal == expense2)
+                        {
+                            expense2 = "Not Added";
+                            expenseValue2 = 0;
+                            Console.WriteLine("Expense Successfully Removed.");
+                        }
+                        if (removal == expense3)
+                        {
+                            expense3 = "Not Added";
+                            expenseValue3 = 0;
+                            Console.WriteLine("Expense Successfully Removed.");
+                        }
+                        if (removal == expense4)
+                        {
+                            expense4 = "Not Added";
+                            expenseValue4 = 0;
+                            Console.WriteLine("Expense Successfully Removed.");
+                        }
+                        if (removal == expense5)
+                        {
+                            expense5 = "Not Added";
+                            expenseValue5 = 0;
+                            Console.WriteLine("Expense Successfully Removed.");
+                        }
+
                         break;
                     case 4:
                         Console.WriteLine("Goodbye!");
