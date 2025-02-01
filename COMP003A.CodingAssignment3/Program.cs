@@ -135,7 +135,7 @@ namespace COMP003A.CodingAssignment3
 
 
                             break;
-                    case 2:
+                    case 2:// Display of expenses and calculation of budget
                         Console.WriteLine($"Expenses:\n{expense1} = {expenseValue1}");
                         Console.WriteLine($"{expense2} = {expenseValue2}");
                         Console.WriteLine($"{expense3} = {expenseValue3}");
@@ -147,7 +147,7 @@ namespace COMP003A.CodingAssignment3
                         Console.WriteLine($"Total Expenses: ${totalExpenses}\nRemaining Budget: ${totalBudget}.");
 
                         break;
-                    case 3:
+                    case 3: // Block of Code to check which expense to remove
                         string removal;
                         Console.Write("Which expense would you like to remove? ");
                         removal = Console.ReadLine();
@@ -183,11 +183,11 @@ namespace COMP003A.CodingAssignment3
                         }
 
                         break;
-                    case 4:
+                    case 4:// Exits the code
                         Console.WriteLine("Goodbye!");
                         menu = false;
                         break;
-                    default:
+                    default:// Prompts user to pick one of the available choices
                         Console.WriteLine("Choice must be between 1 and 4.");
                         break;
                     
