@@ -64,47 +64,76 @@ namespace COMP003A.CodingAssignment3
                 switch (choice) // Switch Block Based on user choice
                 {
                     case 1: // Enter a new expense
-                        string answer;
-
-                        Console.Write("Enter the name of an expense: ");
-                        expense1 = Console.ReadLine();
-
-                        Console.Write("Enter the value of the expense: ");
-                        expenseValue1 = int.Parse(Console.ReadLine());
-
-                        Console.WriteLine("Expense Added Successfully");
-
-                        Console.Write("Would you like to add another expense?"); // Check if user would like to add another expense
-                        answer = Console.ReadLine();
-                        try
+                        if (expense1 == "Not Added")
                         {
+                            Console.Write("Enter  the name of the expense: ");
+                            expense1 = Console.ReadLine();
 
+                            Console.Write("Enter the value of the expense: ");
+                            expenseValue1 = int.Parse(Console.ReadLine());
 
-                            if (answer == "Yes")
+                            Console.WriteLine("Expense Added Successfully.");
+
+                        }
+                        else
+                        {
+                            if (expense2 == "Not Added")
                             {
-                                Console.Write("Enter the name of an expense: ");
+                                Console.Write("Enter  the name of the expense: ");
                                 expense2 = Console.ReadLine();
 
                                 Console.Write("Enter the value of the expense: ");
                                 expenseValue2 = int.Parse(Console.ReadLine());
 
-                                Console.WriteLine("Expense Added Successfully");
-
-                            }
-                            if (answer == "No")
-                            {
-                                break;
+                                Console.WriteLine("Expense Added Successfully.");
                             }
                             else
                             {
-                                throw new Exception("Answer must be Yes or No.");
+                                if (expense3 == "Not Added")
+                                {
+                                    Console.Write("Enter  the name of the expense: ");
+                                    expense3 = Console.ReadLine();
+
+                                    Console.Write("Enter the value of the expense: ");
+                                    expenseValue3 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("Expense Added Successfully.");
+                                }
+                                else
+                                {
+                                    if (expense4 == "Not Added")
+                                    {
+                                        Console.Write("Enter  the name of the expense: ");
+                                        expense4 = Console.ReadLine();
+
+                                        Console.Write("Enter the value of the expense: ");
+                                        expenseValue4 = int.Parse(Console.ReadLine());
+
+                                        Console.WriteLine("Expense Added Successfully.");
+                                    }
+                                    else
+                                    {
+                                        if (expense5 == "Not Added")
+                                        {
+                                            Console.Write("Enter  the name of the expense: ");
+                                            expense5 = Console.ReadLine();
+
+                                            Console.Write("Enter the value of the expense: ");
+                                            expenseValue5 = int.Parse(Console.ReadLine());
+
+                                            Console.WriteLine("Expense Added Successfully.");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Sorry. Only 5 expenses can be saved at once.\n Please delete an expense to add another.");
+                                        }
+                                    }
+
+                                }
                             }
                         }
-                        catch
-                        {
-                            Console.WriteLine($"\n{expense2} = {expenseValue2}");
-                        }
-                
+
+
                             break;
                     case 2:
                         Console.WriteLine($"Expenses:\n{expense1} = {expenseValue1}");
